@@ -6,16 +6,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="com-self-sprintboot-learning-apigateway" />
         <module name="WeatherPartiel" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="WeatherPartiel" target="11" />
+      <module name="ApiGateway" target="11" />
+      <module name="com-self-sprintboot-learning-apigateway" target="1.8" />
+      <module name="WeatherPartiel" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="WeatherPartiel" options="-parameters" />
+      <module name="ApiGateway" options="-parameters" />
+      <module name="WeatherPartiel" options="" />
     </option>
   </component>
 </project>

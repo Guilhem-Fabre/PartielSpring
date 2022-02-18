@@ -1,6 +1,10 @@
 package com.example.WeatherPartiel.controller;
 
 import com.example.WeatherPartiel.bean.Weather;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,6 +15,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
+@Api(value = "METEO", description = "METEO")
+@RequestMapping("/weathers")
 public class WeatherPartielController {
     public static final List<Weather> weathers = new ArrayList<Weather>() {
         private static final long serialVersionUID = -3970206781360313502L;
@@ -22,6 +28,12 @@ public class WeatherPartielController {
         }
     };
 
+    @ApiOperation(value = "Get list of Weathers", response = Iterable.class, tags = "getWeather")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Suceess|OK"),
+            @ApiResponse(code = 401, message = "not authorized!"),
+            @ApiResponse(code = 403, message = "forbidden!!!"),
+            @ApiResponse(code = 404, message = "not found!!!") })
     @RequestMapping(
             name = "getWeather",
             method = RequestMethod.GET
@@ -35,6 +47,7 @@ public class WeatherPartielController {
         }
     }
 
+    @ApiOperation(value = "Get list of Weathers", response = Iterable.class, tags = "getWeatherByPays")
     @RequestMapping(
             name = "getWeatherByPays",
             method = RequestMethod.GET,
@@ -51,6 +64,7 @@ public class WeatherPartielController {
         }
     }
 
+    @ApiOperation(value = "Get list of Weathers", response = Iterable.class, tags = "getWeatherByNom")
     @RequestMapping(
             name = "getWeatherByNom",
             method = RequestMethod.GET,
@@ -67,6 +81,7 @@ public class WeatherPartielController {
         }
     }
 
+    @ApiOperation(value = "Get list of Weathers", response = Iterable.class, tags = "getWeatherByCode")
     @RequestMapping(
             name = "getWeatherByCode",
             method = RequestMethod.GET,
@@ -83,7 +98,7 @@ public class WeatherPartielController {
         }
     }
 
-
+    @ApiOperation(value = "Get list of Weathers", response = Iterable.class, tags = "getWeatherByMeteo")
     @RequestMapping(
             name = "getWeatherByMeteo",
             method = RequestMethod.GET,

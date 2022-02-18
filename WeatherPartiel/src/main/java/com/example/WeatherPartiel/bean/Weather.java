@@ -1,11 +1,18 @@
 package com.example.WeatherPartiel.bean;
 
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class Weather {
+    @ApiModelProperty(notes = "Weather's Id", name = "id", required = true, value = "1")
     private int id;
+    @ApiModelProperty(notes = "Weather's Nom", name = "nom", required = true, value = "Nice")
     private String nom;
+    @ApiModelProperty(notes = "Weather's Code", name = "code", required = true, value = "06000")
     private String code;
+    @ApiModelProperty(notes = "Weather's Pays", name = "pays", required = true, value = "France")
     private String pays;
+    @ApiModelProperty(notes = "Weather's Meteo", name = "meteo", required = true, value = "soleil")
     private String meteo;
 
     public Weather(int id, String nom,String code,String pays,String meteo ){
