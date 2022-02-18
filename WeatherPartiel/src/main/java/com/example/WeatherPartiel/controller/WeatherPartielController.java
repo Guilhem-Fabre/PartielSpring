@@ -52,6 +52,22 @@ public class WeatherPartielController {
     }
 
     @RequestMapping(
+            name = "getWeatherByNom",
+            method = RequestMethod.GET,
+            value = "nom/{nom}"
+    )
+    public List<Weather> getWeathersByNom(@PathVariable String nom){
+        try {
+            return weathers.stream()
+                    .filter(weather -> nom.equals(weather.getNom()))
+                    .collect(Collectors.toList());
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    @RequestMapping(
             name = "getWeatherByCode",
             method = RequestMethod.GET,
             value = "code/{code}"
