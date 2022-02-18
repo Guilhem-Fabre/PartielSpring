@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/PartielSpring.iml" filepath="$PROJECT_DIR$/.idea/PartielSpring.iml" />
       <module fileurl="file://$PROJECT_DIR$/WeatherPartiel/WeatherPartiel.iml" filepath="$PROJECT_DIR$/WeatherPartiel/WeatherPartiel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ApiGateway/com-self-sprintboot-learning-apigateway.iml" filepath="$PROJECT_DIR$/ApiGateway/com-self-sprintboot-learning-apigateway.iml" />
     </modules>
   </component>
 </project>
